@@ -1,23 +1,69 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
-import axios from 'axios';
+// frontend/App.js
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// Navigation
+import RootNavigator from './navigation/AppNavigator';
+import AuthNavigator from './navigation/AuthNavigator';
+
+// Context for Auth
+import { AuthContext } from './utils/AuthContext';
 
 export default function App() {
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://10.0.2.2:3000/api/users') // 10.0.2.2 dùng cho emulator Android
-      .then(res => setUsers(res.data))
-      .catch(err => console.log(err));
+    // Check if user is logged in
+    const checkUser = async () => {
+      try {
+        const userData = await AsyncStorage.getItem('user');
+        if (userData) {
+          setUser(JSON.parse(userData));
+        }
+      } catch (error) {
+        console.log('Error retrieving user data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkUser();
   }, []);
 
+  const authContext = {
+    user,
+    login: async (userData) => {
+      try {
+        await AsyncStorage.setItem('user', JSON.stringify(userData));
+        setUser(userData);
+      } catch (error) {
+        console.log('Error storing user data:', error);
+      }
+    },
+    logout: async () => {
+      try {
+        await AsyncStorage.removeItem('user');
+        setUser(null);
+      } catch (error) {
+        console.log('Error removing user data:', error);
+      }
+    }
+  };
+
+  if (isLoading) {
+    // You can return a loading component here
+    return null;
+  }
+
   return (
-    <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Danh sách người dùng:</Text>
-      {users.map(user => (
-        <Text key={user.id}>• {user.name}</Text>
-      ))}
-    </View>
+    <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        <StatusBar style="auto" />
+        {user ? <RootNavigator /> : <AuthNavigator />}
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }
-
