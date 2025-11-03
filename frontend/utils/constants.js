@@ -1,6 +1,16 @@
 // frontend/utils/constants.js
 export const API_URL = "http://192.168.1.19:5000/api"; // Change this to your backend IP address
 
+export const CATEGORIES = [
+  "Đồ ăn uống",
+  "Đi lại",
+  "Mua sắm",
+  "Giải trí",
+  "Gia dụng",
+  "Thuê nhà",
+  "Hóa đơn",
+  "Khác",
+];
 
 export const COLORS = {
   primary: "#1DA1F2",
