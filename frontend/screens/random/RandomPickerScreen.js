@@ -14,10 +14,11 @@ import {
   Easing,
   Modal
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import { COLORS } from '../../utils/constants';
+const Icon = Ionicons;
 
 const RandomPickerScreen = ({ navigation }) => {
   const [personName, setPersonName] = useState('');
@@ -193,12 +194,12 @@ const RandomPickerScreen = ({ navigation }) => {
               <View style={styles.resultModalHeader}>
                 <Text style={styles.resultModalTitle}>Kết quả chọn ngẫu nhiên</Text>
                 <TouchableOpacity onPress={() => setShowResultModal(false)}>
-                  <Icon name="close" size={24} color={COLORS.secondary} />
+                  <Ionicons name="close" size={24} color={COLORS.secondary} />
                 </TouchableOpacity>
               </View>
 
               <View style={styles.resultModalContent}>
-                <Icon name="trophy" size={60} color={COLORS.warning} style={styles.trophyIcon} />
+                <Ionicons name="trophy" size={60} color={COLORS.warning} style={styles.trophyIcon} />
                 <Text style={styles.resultModalName}>{selectedPerson?.name}</Text>
                 <Text style={styles.resultModalDescription}>
                   Đã được chọn ngẫu nhiên từ {peopleList.length} người
@@ -210,7 +211,7 @@ const RandomPickerScreen = ({ navigation }) => {
                   style={styles.resultModalAction}
                   onPress={handleRemoveSelected}
                 >
-                  <Icon name="trash-outline" size={20} color={COLORS.danger} />
+                  <Ionicons name="trash-outline" size={20} color={COLORS.danger} />
                   <Text style={[styles.resultModalActionText, {color: COLORS.danger}]}>
                     Xóa khỏi danh sách
                   </Text>
@@ -223,7 +224,7 @@ const RandomPickerScreen = ({ navigation }) => {
                     startRandomSelection();
                   }}
                 >
-                  <Icon name="refresh-outline" size={20} color={COLORS.primary} />
+                  <Ionicons name="refresh-outline" size={20} color={COLORS.primary} />
                   <Text style={styles.resultModalActionText}>Chọn lại</Text>
                 </TouchableOpacity>
               </View>
@@ -275,7 +276,7 @@ const RandomPickerScreen = ({ navigation }) => {
                   style={styles.addButton}
                   onPress={handleAddPerson}
                 >
-                  <Icon name="add" size={20} color="#fff" />
+                  <Ionicons name="add" size={20} color="#fff" />
                 </TouchableOpacity>
               </View>
 
@@ -307,7 +308,7 @@ const RandomPickerScreen = ({ navigation }) => {
                           onPress={() => handleRemovePerson(person.id)}
                           disabled={isSelecting}
                         >
-                          <Icon
+                          <Ionicons
                             name="close-circle"
                             size={20}
                             color={selectedPersonId === person.id && !showResultModal ? COLORS.white : COLORS.danger}
@@ -342,7 +343,7 @@ const RandomPickerScreen = ({ navigation }) => {
                 { transform: [{ rotate: spin }] }
               ]}
             >
-              <Icon name="sync" size={40} color={COLORS.primary} />
+              <Ionicons name="sync" size={40} color={COLORS.primary} />
             </Animated.View>
           </View>
         )}

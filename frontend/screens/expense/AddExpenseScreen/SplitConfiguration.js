@@ -8,12 +8,13 @@ import {
   Modal,
   ScrollView,
 } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 import Card from "../../../components/common/Card";
 import Button from "../../../components/common/Button";
 import CustomSplitItem from "./CustomSplitItem";
 import styles from "./styles";
 import { COLORS } from "../../../utils/constants";
+const Icon = Ionicons;
 
 const SplitConfiguration = ({
   splitType,
@@ -601,7 +602,7 @@ const SplitConfiguration = ({
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>Tùy chọn miễn phí ngẫu nhiên</Text>
             <TouchableOpacity onPress={() => setInfoModalVisible(false)}>
-              <Icon name="close" size={24} color={COLORS.secondary} />
+              <Ionicons name="close" size={24} color={COLORS.secondary} />
             </TouchableOpacity>
           </View>
 

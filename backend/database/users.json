@@ -1,5 +1,4 @@
 [
-
   {
     "id": "m8ddlaqsCX0MR",
     "name": "Y",
@@ -16,7 +15,18 @@
     "password": "12345678",
     "createdAt": "2025-10-30T17:34:46.958Z",
     "groups": [
-      "mh54qw2i7KPJA"
+      "mh54qw2i7KPJA",
+      "mhuw0k5bQ1OU3"
+    ]
+  },
+  {
+    "id": "mhuw1z8uUDQGD",
+    "name": "Dung",
+    "email": "dung@gmail.com",
+    "password": "123456",
+    "createdAt": "2025-11-11T18:12:15.150Z",
+    "groups": [
+      "mhuw0k5bQ1OU3"
     ]
   }
 ]

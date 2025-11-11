@@ -1,8 +1,9 @@
 // frontend/screens/expense/AddExpenseScreen/AmountInput.js
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
+const Icon = Ionicons;
 
 const AmountInput = ({
   amount,
@@ -33,7 +34,7 @@ const AmountInput = ({
             style={styles.amountButton}
             onPress={onEditAmount}
           >
-            <Icon name="create-outline" size={20} color="#fff" />
+            <Ionicons name="create-outline" size={20} color="#fff" />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity

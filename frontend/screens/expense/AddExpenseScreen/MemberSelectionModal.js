@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, Modal, Text, TouchableOpacity, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../../../components/common/Button';
 import { COLORS } from '../../../utils/constants';
 import styles from './styles';
+const Icon = Ionicons;
 
 const MemberSelectionModal = ({
   visible,
@@ -37,7 +38,7 @@ const MemberSelectionModal = ({
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>Chọn người tham gia</Text>
             <TouchableOpacity onPress={() => onClose(selectedPayer)}>
-              <Icon name="close" size={24} color={COLORS.secondary} />
+              <Ionicons name="close" size={24} color={COLORS.secondary} />
             </TouchableOpacity>
           </View>
 

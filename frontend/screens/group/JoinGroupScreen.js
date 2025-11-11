@@ -7,7 +7,8 @@ import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import { COLORS } from '../../utils/constants';
 import { groupApi } from '../../services/api';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const JoinGroupScreen = ({ navigation }) => {
   const [joinCode, setJoinCode] = useState('');
@@ -140,7 +141,7 @@ const JoinGroupScreen = ({ navigation }) => {
       </Card>
 
       <View style={styles.infoBox}>
-        <Icon name="information-circle-outline" size={20} color={COLORS.primary} style={styles.infoIcon} />
+        <Ionicons name="information-circle-outline" size={20} color={COLORS.primary} style={styles.infoIcon} />
         <Text style={styles.infoText}>
           Mã tham gia nhóm có thể lấy từ người tạo nhóm. Mã gồm 6 ký tự và không phân biệt chữ hoa chữ thường.
         </Text>

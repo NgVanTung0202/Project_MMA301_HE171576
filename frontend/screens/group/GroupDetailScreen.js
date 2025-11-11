@@ -20,8 +20,9 @@ import Loading from "../../components/common/Loading";
 import Button from "../../components/common/Button";
 import { COLORS } from "../../utils/constants";
 import { groupApi, expenseApi, userApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 import * as Clipboard from "expo-clipboard";
+const Icon = Ionicons;
 
 const GroupDetailScreen = ({ route, navigation }) => {
   const { groupId } = route.params;
@@ -260,7 +261,7 @@ const GroupDetailScreen = ({ route, navigation }) => {
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Thành viên nhóm</Text>
               <TouchableOpacity onPress={() => setShowMembersModal(false)}>
-                <Icon name="close" size={24} color={COLORS.secondary} />
+                <Ionicons name="close" size={24} color={COLORS.secondary} />
               </TouchableOpacity>
             </View>
 

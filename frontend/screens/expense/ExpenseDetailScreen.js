@@ -15,9 +15,10 @@ import Button from "../../components/common/Button";
 import Loading from "../../components/common/Loading";
 import { COLORS } from "../../utils/constants";
 import { expenseApi, userApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
+const Icon = Ionicons;
 
 const ExpenseDetailScreen = ({ route, navigation }) => {
   const { expenseId } = route.params;

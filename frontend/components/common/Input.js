@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { COLORS } from "../../utils/constants";
-import Icon from "react-native-vector-icons/Ionicons";
-
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 const Input = ({
   label,
   value,

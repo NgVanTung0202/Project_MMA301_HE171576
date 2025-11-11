@@ -1,6 +1,6 @@
 // frontend/utils/constants.js
-export const API_URL = "http://192.168.1.19:5000/api"; // Change this to your backend IP address
-
+export const API_URL = "http://192.168.1.4:5000/api"; // Change this to your backend IP address
+  
 export const CATEGORIES = [
   "Đồ ăn uống",
   "Đi lại",

@@ -22,9 +22,10 @@ import Card from "../../components/common/Card";
 import Loading from "../../components/common/Loading";
 import { COLORS } from "../../utils/constants";
 import { expenseApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get("window");
+const Icon = Ionicons;
 
 const ExpenseDashboardScreen = ({ navigation }) => {
   const { user } = useContext(AuthContext);
@@ -262,11 +263,11 @@ const ExpenseDashboardScreen = ({ navigation }) => {
 
         <View style={styles.dateSelector}>
           <TouchableOpacity onPress={handlePrevious}>
-            <Icon name="chevron-back" size={24} color={COLORS.primary} />
+            <Ionicons name="chevron-back" size={24} color={COLORS.primary} />
           </TouchableOpacity>
           <Text style={styles.currentDate}>{formatDate(selectedDate)}</Text>
           <TouchableOpacity onPress={handleNext}>
-            <Icon name="chevron-forward" size={24} color={COLORS.primary} />
+            <Ionicons name="chevron-forward" size={24} color={COLORS.primary} />
           </TouchableOpacity>
         </View>
       </Card>

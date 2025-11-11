@@ -13,7 +13,8 @@ import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
 import { COLORS } from "../../utils/constants";
 import { userApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -70,7 +71,7 @@ const LoginScreen = ({ navigation }) => {
         style={styles.backButton}
         onPress={() => navigation.goBack()}
       >
-        <Icon name="arrow-back" size={24} color={COLORS.dark} />
+        <Ionicons  name="arrow-back" size={24} color={COLORS.dark} />
       </TouchableOpacity>
 
       <View style={styles.header}>

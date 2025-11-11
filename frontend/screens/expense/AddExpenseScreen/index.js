@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../../../components/common/Button';
 import Input from '../../../components/common/Input';
 import Loading from '../../../components/common/Loading';
@@ -17,6 +17,7 @@ import styles from './styles';
 
 // Import utilities
 import { validateExpenseData } from './utils';
+const Icon = Ionicons;
 
 const AddExpenseScreen = ({ route, navigation }) => {
   const initialGroupId = route.params?.groupId;
@@ -400,7 +401,7 @@ const AddExpenseScreen = ({ route, navigation }) => {
                   onPress={openMemberSelection}
                 >
                   <Text style={styles.selectMembersText}>Chọn</Text>
-                  <Icon name="people" size={16} color={COLORS.primary} />
+                  <Ionicons name="people" size={16} color={COLORS.primary} />
                 </TouchableOpacity>
               </View>
 

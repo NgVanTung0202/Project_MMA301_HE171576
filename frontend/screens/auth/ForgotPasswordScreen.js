@@ -13,7 +13,8 @@ import Button from "../../components/common/Button";
 import Card from "../../components/common/Card";
 import { COLORS } from "../../utils/constants";
 import { userApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const ForgotPasswordScreen = ({ navigation }) => {
   const { logout } = useContext(AuthContext);
@@ -296,7 +297,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={styles.backButton}
         >
-          <Icon name="arrow-back" size={24} color={COLORS.dark} />
+          <Ionicons name="arrow-back" size={24} color={COLORS.dark} />
         </TouchableOpacity>
       </View>
 

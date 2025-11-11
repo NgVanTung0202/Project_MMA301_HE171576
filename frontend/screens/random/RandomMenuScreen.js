@@ -8,7 +8,7 @@ import {
   ScrollView,
   SafeAreaView,
 } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 import Card from "../../components/common/Card";
 import { COLORS } from "../../utils/constants";
 
@@ -17,13 +17,13 @@ const FeatureCard = ({ title, description, icon, onPress }) => {
     <TouchableOpacity onPress={onPress}>
       <Card style={styles.featureCard}>
         <View style={styles.featureIconContainer}>
-          <Icon name={icon} size={32} color={COLORS.primary} />
+          <Ionicons name={icon} size={32} color={COLORS.primary} />
         </View>
         <View style={styles.featureContent}>
           <Text style={styles.featureTitle}>{title}</Text>
           <Text style={styles.featureDescription}>{description}</Text>
         </View>
-        <Icon name="chevron-forward" size={24} color={COLORS.secondary} />
+        <Ionicons name="chevron-forward" size={24} color={COLORS.secondary} />
       </Card>
     </TouchableOpacity>
   );
@@ -67,7 +67,7 @@ const RandomMenuScreen = ({ navigation }) => {
         <View style={styles.infoContainer}>
           <Card style={styles.infoCard}>
             <View style={styles.infoHeader}>
-              <Icon
+              <Ionicons
                 name="information-circle-outline"
                 size={24}
                 color={COLORS.primary}

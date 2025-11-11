@@ -12,10 +12,11 @@ import {
   TouchableWithoutFeedback,
   Modal
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import { COLORS } from '../../utils/constants';
+const Icon = Ionicons;
 
 const RandomSplitScreen = ({ navigation }) => {
   const [totalAmount, setTotalAmount] = useState('');
@@ -525,7 +526,7 @@ const RandomSplitScreen = ({ navigation }) => {
               <View style={styles.infoModalHeader}>
                 <Text style={styles.infoModalTitle}>Tùy chọn miễn phí ngẫu nhiên</Text>
                 <TouchableOpacity onPress={() => setInfoModalVisible(false)}>
-                  <Icon name="close" size={24} color={COLORS.secondary} />
+                  <Ionicons name="close" size={24} color={COLORS.secondary} />
                 </TouchableOpacity>
               </View>
               <ScrollView style={styles.infoModalContent}>
@@ -585,7 +586,7 @@ const RandomSplitScreen = ({ navigation }) => {
               <View style={styles.infoModalHeader}>
                 <Text style={styles.infoModalTitle}>Phương pháp chia tiền</Text>
                 <TouchableOpacity onPress={() => setMethodInfoVisible(false)}>
-                  <Icon name="close" size={24} color={COLORS.secondary} />
+                  <Ionicons name="close" size={24} color={COLORS.secondary} />
                 </TouchableOpacity>
               </View>
               <ScrollView style={styles.infoModalContent}>
@@ -690,14 +691,14 @@ const RandomSplitScreen = ({ navigation }) => {
                                    style={styles.amountButton}
                                    onPress={handleEditAmount}
                                  >
-                                   <Icon name="create-outline" size={20} color="#fff" />
+                                   <Ionicons name="create-outline" size={20} color="#fff" />
                                  </TouchableOpacity>
                                ) : (
                                  <TouchableOpacity
                                    style={styles.amountButton}
                                    onPress={handleConfirmAmount}
                                  >
-                                   <Icon name="checkmark" size={20} color="#fff" />
+                                   <Ionicons name="checkmark" size={20} color="#fff" />
                                  </TouchableOpacity>
                                )}
                              </View>
@@ -723,7 +724,7 @@ const RandomSplitScreen = ({ navigation }) => {
                                  style={styles.addButton}
                                  onPress={handleAddPerson}
                                >
-                                 <Icon name="add" size={20} color="#fff" />
+                                 <Ionicons name="add" size={20} color="#fff" />
                                </TouchableOpacity>
                              </View>
 
@@ -741,7 +742,7 @@ const RandomSplitScreen = ({ navigation }) => {
                                          style={styles.removeButton}
                                          onPress={() => handleRemovePerson(person.id)}
                                        >
-                                         <Icon name="close-circle" size={20} color={COLORS.danger} />
+                                         <Ionicons name="close-circle" size={20} color={COLORS.danger} />
                                        </TouchableOpacity>
                                      </View>
                                    ))}
@@ -779,7 +780,7 @@ const RandomSplitScreen = ({ navigation }) => {
                                style={styles.infoIcon}
                                onPress={() => setMethodInfoVisible(true)}
                              >
-                               <Icon name="information-circle-outline" size={18} color={COLORS.secondary} />
+                               <Ionicons name="information-circle-outline" size={18} color={COLORS.secondary} />
                              </TouchableOpacity>
                            </View>
 
@@ -823,7 +824,7 @@ const RandomSplitScreen = ({ navigation }) => {
                                  onPress={handleGenerateNew}
                                >
                                  <Text style={styles.newSplitText}>Tạo mới</Text>
-                                 <Icon name="refresh" size={16} color={COLORS.primary} />
+                                 <Ionicons name="refresh" size={16} color={COLORS.primary} />
                                </TouchableOpacity>
                              </View>
 

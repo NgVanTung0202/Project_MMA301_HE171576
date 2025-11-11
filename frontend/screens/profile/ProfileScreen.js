@@ -15,7 +15,8 @@ import Button from "../../components/common/Button";
 import Loading from "../../components/common/Loading";
 import { COLORS } from "../../utils/constants";
 import { userApi, expenseApi, groupApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const ProfileScreen = ({ navigation }) => {
   const { user, logout } = useContext(AuthContext);
@@ -190,7 +191,7 @@ const ProfileScreen = ({ navigation }) => {
             </Text>
             <Text style={styles.statLabel}>Tổng chi (đ)</Text>
             <View style={styles.viewMoreIndicator}>
-              <Icon
+              <Ionicons
                 name="chevron-forward-circle"
                 size={16}
                 color={COLORS.primary}
@@ -206,18 +207,18 @@ const ProfileScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Settings")}
         >
           <View style={styles.menuItemContent}>
-            <Icon name="settings-outline" size={22} color={COLORS.dark} />
+            <Ionicons name="settings-outline" size={22} color={COLORS.dark} />
             <Text style={styles.menuItemText}>Cài đặt</Text>
           </View>
-          <Icon name="chevron-forward" size={20} color={COLORS.gray} />
+          <Ionicons name="chevron-forward" size={20} color={COLORS.gray} />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem}>
           <View style={styles.menuItemContent}>
-            <Icon name="help-circle-outline" size={22} color={COLORS.dark} />
+            <Ionicons name="help-circle-outline" size={22} color={COLORS.dark} />
             <Text style={styles.menuItemText}>Trợ giúp</Text>
           </View>
-          <Icon name="chevron-forward" size={20} color={COLORS.gray} />
+          <Ionicons name="chevron-forward" size={20} color={COLORS.gray} />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem}>
@@ -229,7 +230,7 @@ const ProfileScreen = ({ navigation }) => {
             />
             <Text style={styles.menuItemText}>Thông tin ứng dụng</Text>
           </View>
-          <Icon name="chevron-forward" size={20} color={COLORS.gray} />
+          <Ionicons name="chevron-forward" size={20} color={COLORS.gray} />
         </TouchableOpacity>
       </Card>
 

@@ -18,7 +18,8 @@ import EmptyState from "../../components/common/EmptyState";
 import Loading from "../../components/common/Loading";
 import { COLORS } from "../../utils/constants";
 import { expenseApi, groupApi, userApi } from "../../services/api"; // Thêm userApi
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const ExpensesScreen = ({ navigation }) => {
   const [expenses, setExpenses] = useState([]);
@@ -263,7 +264,7 @@ const ExpensesScreen = ({ navigation }) => {
           />
           {searchQuery.length > 0 && (
             <TouchableOpacity onPress={clearSearch} style={styles.clearButton}>
-              <Icon name="close-circle" size={20} color={COLORS.secondary} />
+              <Ionicons name="close-circle" size={20} color={COLORS.secondary} />
             </TouchableOpacity>
           )}
         </View>

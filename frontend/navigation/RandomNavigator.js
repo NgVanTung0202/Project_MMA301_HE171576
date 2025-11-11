@@ -2,13 +2,14 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import RandomMenuScreen from '../screens/random/RandomMenuScreen';
 import RandomSplitScreen from '../screens/random/RandomSplitScreen';
 import RandomPickerScreen from '../screens/random/RandomPickerScreen';
 import { COLORS } from '../utils/constants';
 
 const Stack = createNativeStackNavigator();
+const Icon = Ionicons;
 
 const RandomNavigator = ({ navigation }) => {
   return (
@@ -27,7 +28,7 @@ const RandomNavigator = ({ navigation }) => {
               onPress={() => navigation.goBack()}
               style={{ marginRight: 10 }}
             >
-              <Icon name="arrow-back" size={24} color={COLORS.primary} />
+              <Ionicons name="arrow-back" size={24} color={COLORS.primary} />
             </TouchableOpacity>
           ) : null,
       }}

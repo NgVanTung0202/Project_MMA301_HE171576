@@ -2,7 +2,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
 
 // Screens
 import ExpensesScreen from "../screens/expense/ExpensesScreen";
@@ -25,7 +25,7 @@ import RandomPickerScreen from "../screens/random/RandomPickerScreen";
 
 // Colors
 import { COLORS } from "../utils/constants";
-
+const Icon = Ionicons;
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const RandomStack = createNativeStackNavigator();
@@ -135,7 +135,7 @@ const MainTabNavigator = () => {
             iconName = focused ? "person" : "person-outline";
           }
 
-          return <Icon name={iconName} size={size} color={color} />;
+          return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.secondary,

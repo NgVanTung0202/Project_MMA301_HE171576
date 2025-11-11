@@ -17,7 +17,8 @@ import EmptyState from "../../components/common/EmptyState";
 import Loading from "../../components/common/Loading";
 import { COLORS } from "../../utils/constants";
 import { groupApi, userApi } from "../../services/api";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from '@expo/vector-icons';
+const Icon = Ionicons;
 
 const GroupsScreen = ({ navigation }) => {
   const [groups, setGroups] = useState([]);
@@ -245,7 +246,7 @@ const GroupsScreen = ({ navigation }) => {
           style={styles.fab}
           onPress={() => navigation.navigate("AddGroup")}
         >
-          <Icon name="add" size={24} color={COLORS.white} />
+          <Ionicons name="add" size={24} color={COLORS.white} />
         </TouchableOpacity>
       </View>
     </View>
